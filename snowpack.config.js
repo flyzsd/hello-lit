@@ -1,5 +1,8 @@
+// Snowpack Configuration File
+// See all supported options: https://www.snowpack.dev/reference/configuration
+
 /** @type {import("snowpack").SnowpackUserConfig } */
-export default {
+module.exports = {
     mount: {
         public: { url: '/', static: true },
         src: { url: '/dist' },
@@ -14,8 +17,9 @@ export default {
         // {"match": "routes", "src": ".*", "dest": "/index.html"},
     ],
     optimize: {
-        /* Example: Bundle your final build: */
-        // "bundle": true,
+        bundle: false,
+        minify: false,
+        target: 'esnext',
     },
     packageOptions: {
         /* ... */
